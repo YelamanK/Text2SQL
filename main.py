@@ -15,7 +15,7 @@ from clickhouse_driver import Client
 import clickhouse_driver
 import datetime
 
-os.environ['OPENAI_API_KEY'] = ""
+os.environ['OPENAI_API_KEY'] = "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"
 
 destination_user = "default"
 destination_password = "oMdI2ED_lhe3V"
@@ -41,7 +41,7 @@ agent_executor = create_sql_agent(
 )
 
 def text_to_sql(query):
-    result = agent_executor.run(query + " Proceed until you answer the question or say that you don't know, don't ask my permission, explain your thought process. Please think carefully about your answer and analyse it a couple of times before responding")
+    result = agent_executor.run(query + " Proceed until you answer the question or say that you don't know, don't ask my permission, explain your thought process. Please think carefully about your answer and analyse it a couple of times before responding. Also - Google Ads means ads on Google platform and Twitter Ads means ads on Twitter platform, etc.")
     return result
 
 title = "Text 2 SQL"
