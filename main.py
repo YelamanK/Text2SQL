@@ -15,6 +15,7 @@ from clickhouse_driver import Client
 import clickhouse_driver
 import datetime
 
+#TODO: these should be env variables
 os.environ['OPENAI_API_KEY'] = "Your OpenAI API Key"
 
 destination_user = "default"
