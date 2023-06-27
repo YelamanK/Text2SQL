@@ -42,7 +42,11 @@ agent_executor = create_sql_agent(
 )
 
 def text_to_sql(query):
-    instruction = " Proceed until you answer the question or say that you don't know, don't ask my permission, explain your thought process. Please think carefully about your answer and analyse it a couple of times before responding. Also - Google Ads means ads on Google platform and Twitter Ads means ads on Twitter platform, etc."
+    instruction = ''' 
+    Proceed until you answer the question or say that you don't know, don't ask my permission, explain your thought process. 
+    Please think carefully about your answer and analyse it a couple of times before responding. 
+    Also - Google Ads means ads on Google platform and Twitter Ads means ads on Twitter platform, etc.
+    '''
     result = agent_executor.run(query + instruction)
     return result
 
